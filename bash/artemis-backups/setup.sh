@@ -6,8 +6,9 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+mkdir /var/scripts/backup -p
 apt install rsync -y
-
+cp ./backup_script.sh /var/scripts/backup/backup_script.sh
 # Set up cron job to run the backup script every 15 minutes
 (crontab -l ; echo "*/15 * * * * /var/scripts/backup/backup_script.sh") | crontab -
 
