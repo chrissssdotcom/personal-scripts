@@ -11,7 +11,7 @@ mkdir -p "$dest_path_build"
 mkdir -p "$dest_path_app"
 
 # Backup /mnt/config to /opt/backups/build-config
-rsync -av --delete "$source_path/" "$dest_path_build/"
+rsync -av --delete "$compose_path/" "$dest_path_build/"
 
 # Backup /opt/configs to /opt/backups/app-config
 rsync -av --delete "$config_path/" "$dest_path_app/"
